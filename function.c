@@ -2,9 +2,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
- * _strlen - function that returns the length of a string
- * @s: string feed to the function
- * Return: length of string
+ * _strlen - Function that returns the length of a string
+ * @s: String feed to the function
+ * Return: Length of string
  */
 int _strlen(char *s)
 {
@@ -18,8 +18,9 @@ int _strlen(char *s)
 	return (length);
 }
 /**
- * print_int - function that prints an integer with write function
+ * print_int - Function that prints an integer with write function
  * @integer: Integer to be printed
+ * Return: Number of printed characters for the interger
  */
 int print_int(int integer)
 {
@@ -38,9 +39,9 @@ int print_int(int integer)
 	return (size);
 }
 /**
- * _putchar - function that prints a single character
+ * _putchar - Function that prints a single character
  * @c: Character to be printed
- * Return: 0
+ * Return: Always (1) on success
  */
 int _putchar(char c)
 {

@@ -37,3 +37,13 @@ int print_int(int integer)
 	free(container);
 	return (size);
 }
+/**
+ * _putchar - function that prints a single character
+ * @c: Character to be printed
+ * Return: 0
+ */
+int _putchar(char c)
+{
+	write(1, &c, 1);
+	return (1);
+}

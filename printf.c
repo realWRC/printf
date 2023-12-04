@@ -34,6 +34,7 @@ int _printf(const char *format, ...)
 				case 'd':
 				case 'i':
 					j += print_int(va_arg(str, int));
+					break;
 				default:
 					j += _putchar('%');
 					break;

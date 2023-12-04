@@ -31,6 +31,9 @@ int _printf(const char *format, ...)
 					write(1, argstr, sizeof(char) * _strlen(argstr));
 					j += _strlen(argstr);
 					break;
+				case 'd':
+				case 'i':
+					j += print_int(va_arg(str, int));
 				default:
 					j += _putchar('%');
 					break;

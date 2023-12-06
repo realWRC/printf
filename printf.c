@@ -10,10 +10,11 @@
 int _printf(const char *format, ...)
 {
 	va_list str;
-	char argchar;
 	int i, j;
 
 	va_start(str, format);
+	if (format == NULL)
+		return (0);
 	for (i = 0, j = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] == '%')
@@ -33,10 +34,10 @@ int _printf(const char *format, ...)
 				case '%':
 					j += _putchar('%');
 					break;
+				case '\0':
+					break;
 				default:
-					argchar = format[i + 1];
-					j += _putchar('%');
-					j += _putchar(argchar);
+					defaultcase(format[i + 1]);
 					break;
 			}
 			i++;
@@ -46,4 +47,19 @@ int _printf(const char *format, ...)
 	}
 	va_end(str);
 	return (j);
+}
+/**
+ * defaultcase - Abstraction for default in switch statement for
+ * betty complince
+ * @c: Default outputs
+ * Return: Always (2) on success
+ */
+int defaultcase(char c)
+{
+	int count = 0;
+	char argchar = c;
+
+	count += _putchar('%');
+	count += _putchar(argchar);
+	return (count);
 }
